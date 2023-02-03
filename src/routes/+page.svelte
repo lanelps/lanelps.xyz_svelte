@@ -1,4 +1,12 @@
-<h1 class="text-main font-main">Hello world!</h1>
+<script lang="ts">
+	import { PortableText } from '@portabletext/svelte';
+
+	export let data: HomePageData;
+</script>
+
+<div class="rich-text">
+	<PortableText value={[...data?.body]} onMissingComponent={false} />
+</div>
 
 <style lang="postcss">
 </style>
