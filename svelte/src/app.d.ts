@@ -22,3 +22,15 @@ interface HomePageData {
 		};
 	};
 }
+
+interface AboutPageData {
+	title: string;
+	body: Array;
+	media: {
+		type: string;
+		video: {
+			format: string;
+			public_id: string;
+		};
+	};
+}
