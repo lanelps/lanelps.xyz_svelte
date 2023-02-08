@@ -3,3 +3,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	a {
+		display: inline-block;
+		transform: skew(0deg, 0);
+
+		transition: color theme('transitionDuration.DEFAULT') theme('transitionTimingFunction.DEFAULT'),
+			transform theme('transitionDuration.DEFAULT') theme('transitionTimingFunction.DEFAULT');
+	}
+
+	a:hover {
+		color: theme('colors.blue');
+		transform: skew(-20deg, 0);
+	}
+}
