@@ -1,5 +1,5 @@
 <script lang="ts">
-	import RichText from '../../components/RichText.svelte';
+	import RichText from '@components/RichText.svelte';
 
 	export let data: AboutPageData;
 </script>
