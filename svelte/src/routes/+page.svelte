@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { PortableText } from '@portabletext/svelte';
+	import RichText from '../components/RichText.svelte';
 
 	export let data: HomePageData;
 </script>
 
-<div class="rich-text">
-	<PortableText value={[...data?.body]} onMissingComponent={false} />
-</div>
-
-<style lang="postcss">
-</style>
+<section class="grid grid-cols-3 gap-x-4">
+	<div class="flex flex-col gap-y-6">
+		<RichText value={data?.body} />
+	</div>
+</section>
