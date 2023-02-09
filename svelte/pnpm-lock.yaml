@@ -1,8 +1,10 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@cloudinary/url-gen': ^1.9.0
   '@portabletext/svelte': 2.0.0-0
   '@sanity/client': ^4.0.1
+  '@sanity/image-url': ^1.0.2
   '@sveltejs/adapter-auto': ^1.0.0
   '@sveltejs/kit': ^1.0.0
   '@typescript-eslint/eslint-plugin': ^5.45.0
@@ -22,7 +24,9 @@ specifiers:
   vite: ^4.0.0
 
 dependencies:
+  '@cloudinary/url-gen': 1.9.0
   '@sanity/client': 4.0.1
+  '@sanity/image-url': 1.0.2
 
 devDependencies:
   '@portabletext/svelte': 2.0.0-0_svelte@3.55.1
@@ -45,6 +49,18 @@ devDependencies:
   vite: 4.1.1
 
 packages:
+
+  /@cloudinary/transformation-builder-sdk/1.2.3:
+    resolution: {integrity: sha512-JLXdolOJVaX9f9Uz+72LJsX5OWmdi2QKbPSoCTE4+D5GugPWghdYrCDu53SSkbcGWfIohjUNIjS++6eRgYlYPg==}
+    dependencies:
+      '@cloudinary/url-gen': 1.9.0
+    dev: false
+
+  /@cloudinary/url-gen/1.9.0:
+    resolution: {integrity: sha512-rw2/KkWsb2oBTQX58E7Zm1pOb3+K7tqHPxms2C7P49qzJbqG+y/u1StwfqCrE94mZMr8q+o47cHxoQJMwWz1fQ==}
+    dependencies:
+      '@cloudinary/transformation-builder-sdk': 1.2.3
+    dev: false
 
   /@esbuild/android-arm/0.16.17:
     resolution: {integrity: sha512-N9x1CMXVhtWEAMS7pNNONyA14f71VPQN9Cnavj1XQh6T7bskqiLLrSca4O0Vr8Wdcga943eThxnVp3JLnBMYtw==}
@@ -360,6 +376,11 @@ packages:
     dependencies:
       event-source-polyfill: 1.0.25
       eventsource: 2.0.2
+    dev: false
+
+  /@sanity/image-url/1.0.2:
+    resolution: {integrity: sha512-C4+jb2ny3ZbMgEkLd7Z3C75DsxcTEoE+axXQJsQ75ou0AKWGdVsP351hqK6mJUUxn5HCSlu3vznoh7Yljye4cQ==}
+    engines: {node: '>=10.0.0'}
     dev: false
 
   /@sanity/timed-out/4.0.2:

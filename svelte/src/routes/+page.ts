@@ -19,6 +19,11 @@ export const load: PageLoad = async () => {
 				format,
 				public_id
 			},
+			image {
+				asset {
+					_ref
+				}
+			}
 		},
 	}`);
 

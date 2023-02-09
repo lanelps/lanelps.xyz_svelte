@@ -34,3 +34,13 @@ interface AboutPageData {
 		};
 	};
 }
+
+interface Media {
+	image?: {
+		asset: {
+			_ref: string;
+		};
+	};
+	type: string;
+	video?: { format: string; public_id: string };
+}

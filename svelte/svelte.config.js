@@ -11,8 +11,9 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		alias: {
-			'@assets': path.resolve('./src/assets'),
-			'@components': path.resolve('./src/components')
+			'~assets': path.resolve('./src/assets'),
+			'~components': path.resolve('./src/components'),
+			'~utils': path.resolve('./src/utils')
 		}
 	}
 };

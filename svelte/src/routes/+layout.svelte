@@ -1,6 +1,6 @@
 <script>
 	import '../styles/index.css';
-	import Header from '../components/Header.svelte';
+	import Header from '~components/Header.svelte';
 </script>
 
 <div
@@ -8,7 +8,7 @@
 >
 	<Header />
 
-	<main class="px-3 pt-[3.75rem]">
+	<main class="h-full px-3 pt-[3.75rem] pb-3 overflow-y-scroll">
 		<slot />
 	</main>
 </div>
