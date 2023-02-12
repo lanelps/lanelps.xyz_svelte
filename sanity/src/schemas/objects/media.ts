@@ -5,7 +5,7 @@ export default {
   fields: [
     {
       name: `type`,
-      title: `Media Type`,
+      title: `Type`,
       type: `string`,
       options: {
         list: [
