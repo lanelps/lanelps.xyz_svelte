@@ -2,9 +2,9 @@
 	import RichText from '~components/RichText.svelte';
 	import Media from '~components/Media.svelte';
 
-	export let data: HomePageData;
+	//
 
-	console.log(`data`, data);
+	export let data: HomePageData;
 </script>
 
 <section class="grid grid-cols-3 gap-x-4">

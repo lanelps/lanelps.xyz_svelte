@@ -1,13 +1,6 @@
 import type { PageLoad } from './$types';
 
-import sanityClient from '@sanity/client';
-
-const client = sanityClient({
-	projectId: 'k2d93j2x',
-	dataset: 'production',
-	apiVersion: '2021-10-21',
-	useCdn: false
-});
+import { client } from '~utils/sanity';
 
 export const load: PageLoad = async () => {
 	const data = await client.fetch(`*[_type == "homePage"][0] {

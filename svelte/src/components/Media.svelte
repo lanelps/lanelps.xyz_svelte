@@ -2,11 +2,16 @@
 	import { getCloudinaryVideoURL } from '~utils/cloudinary';
 
 	import Video from '~components/Video.svelte';
+	import Image from '~components/Image.svelte';
+
+	//
 
 	let className = '';
 	export { className as class };
 
 	export let media: Media;
+
+	//
 
 	$: ({ type, video, image } = media);
 
@@ -27,6 +32,6 @@
 	{/if}
 
 	{#if type == 'image' && image}
-		<img />
+		<Image {image} />
 	{/if}
 </figure>

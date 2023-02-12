@@ -1,12 +1,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	//
+
 	export let autoplay = true,
 		muted = true,
 		loop = true,
 		sources: [{ url: string; type: string }];
 
 	let ref: HTMLVideoElement;
+
+	//
 
 	onMount(() => {
 		if (muted) {
