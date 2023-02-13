@@ -63,7 +63,8 @@ module.exports = {
 			DEFAULT: `cubic-bezier(0.215, 0.61, 0.355, 1)`
 		},
 		transitionDuration: {
-			DEFAULT: `300ms`,
+			DEFAULT: `100ms`,
+			300: `300ms`,
 			1000: `1000ms`
 		},
 		keyframes: {
