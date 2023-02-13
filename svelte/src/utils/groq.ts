@@ -1,4 +1,5 @@
 export const image = `
+    _key,
     altText,
     asset {
         _ref
