@@ -6,7 +6,7 @@ import imageUrlBuilder from '@sanity/image-url';
 export const client = sanityClient({
 	projectId: PUBLIC_SANITY_PROJECT_ID,
 	dataset: PUBLIC_SANITY_DATASET,
-	apiVersion: '2021-10-21',
+	apiVersion: '2022-01-12',
 	useCdn: false
 });
 

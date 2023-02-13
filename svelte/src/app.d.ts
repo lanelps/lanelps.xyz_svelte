@@ -23,7 +23,14 @@ interface AboutPageData {
 }
 
 interface WorkPageData {
-	projects: Project[];
+	projects: {
+		projectName: string;
+		projectDate: string;
+		slug: {
+			current: string;
+		};
+		cover: Image;
+	}[];
 }
 
 interface Project {
