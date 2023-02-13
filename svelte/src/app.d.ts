@@ -9,8 +9,6 @@ declare global {
 	}
 }
 
-// export {};
-
 // objects
 interface HomePageData {
 	title: string;
@@ -31,13 +29,15 @@ interface WorkPageData {
 interface Project {
 	cover: Image;
 	images: Image[];
-	projectDescription: PortableTextBlock[];
 	projectDate: string;
-	website: string;
+	projectDescription: PortableTextBlock[];
+	projectName: string;
 	role: string[];
+	slug: {
+		current: string;
+	};
 	team: string[];
-	cover: Image;
-	images: Image[];
+	website: string;
 }
 
 interface Media {
@@ -90,3 +90,5 @@ type GetImageProps = (args: {
 type GetImageDimensions = (
 	image: Image
 ) => { width: number; height: number; aspectRatio: number } | undefined;
+
+// export {};
