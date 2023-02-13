@@ -14,14 +14,30 @@ declare global {
 // objects
 interface HomePageData {
 	title: string;
-	body: Array;
+	body: PortableTextBlock[];
 	media: Media;
 }
 
 interface AboutPageData {
 	title: string;
-	body: Array;
+	body: PortableTextBlock[];
 	media: Media;
+}
+
+interface WorkPageData {
+	projects: Project[];
+}
+
+interface Project {
+	cover: Image;
+	images: Image[];
+	projectDescription: PortableTextBlock[];
+	projectDate: string;
+	website: string;
+	role: string[];
+	team: string[];
+	cover: Image;
+	images: Image[];
 }
 
 interface Media {
@@ -45,6 +61,7 @@ interface Video {
 	public_id: string;
 }
 
+// functions
 type GetImageProps = (args: {
 	/**
 	 * The image's reference object.
@@ -64,7 +81,7 @@ type GetImageProps = (args: {
 	minimumWidthStep?: number;
 
 	// List of width sizes to use in the srcSet (NON-RETINA)
-	customWidthSteps?: [number];
+	customWidthSteps?: number[];
 
 	// Custom <img> element's `sizes` attribute
 	sizes?: string;

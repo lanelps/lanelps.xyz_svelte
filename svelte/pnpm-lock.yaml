@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@cloudinary/url-gen': ^1.9.0
   '@portabletext/svelte': 2.0.0-0
+  '@portabletext/types': ^2.0.2
   '@sanity/client': ^4.0.1
   '@sanity/image-url': ^1.0.2
   '@sveltejs/adapter-auto': ^2.0.0
@@ -30,6 +31,7 @@ dependencies:
 
 devDependencies:
   '@portabletext/svelte': 2.0.0-0_svelte@3.55.1
+  '@portabletext/types': 2.0.2
   '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.5.6
   '@sveltejs/kit': 1.5.6_svelte@3.55.1+vite@4.1.1
   '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
