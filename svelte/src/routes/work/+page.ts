@@ -5,6 +5,7 @@ import { image } from '~utils/groq';
 
 export const load: PageLoad = async () => {
 	const projects = await client.fetch(`*[_type == "projects"] | order(projectDate desc) {
+		_id,
 		projectName,
         slug {
             current

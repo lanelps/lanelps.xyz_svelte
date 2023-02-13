@@ -8,7 +8,7 @@
 
 <section class="grid grid-cols-3 gap-x-4">
 	<ul class="flex flex-col col-span-3 -mt-3">
-		{#each projects as project, projectIndex}
+		{#each projects as project, projectIndex (project?._id)}
 			<li class="border-b hover:border-blue transition-colors">
 				<ProjectItem
 					name={project?.projectName}

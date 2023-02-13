@@ -24,6 +24,7 @@ interface AboutPageData {
 
 interface WorkPageData {
 	projects: {
+		_id: string;
 		projectName: string;
 		projectDate: string;
 		slug: {
@@ -34,6 +35,7 @@ interface WorkPageData {
 }
 
 interface Project {
+	_id: string;
 	cover: Image;
 	images: Image[];
 	projectDate: string;
