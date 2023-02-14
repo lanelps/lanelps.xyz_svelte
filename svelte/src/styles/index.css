@@ -5,7 +5,8 @@
 @tailwind utilities;
 
 @layer base {
-	a {
+	a,
+	button {
 		display: inline-block;
 		transform: skew(0deg, 0);
 
@@ -13,7 +14,10 @@
 			transform theme('transitionDuration.DEFAULT') theme('transitionTimingFunction.DEFAULT');
 	}
 
-	a:hover {
+	a:hover,
+	a:active,
+	button:hover,
+	button.active {
 		color: theme('colors.blue');
 		transform: skew(-20deg, 0);
 	}
