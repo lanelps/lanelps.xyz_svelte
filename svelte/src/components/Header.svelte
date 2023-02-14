@@ -8,6 +8,10 @@
 
 	let menuActive = false;
 	let mobileRef: HTMLElement;
+
+	const closeMenu = () => {
+		menuActive = false;
+	};
 </script>
 
 <header class="absolute top-0 w-full px-3 bg-white md-t:bg-transparent z-50">
@@ -15,7 +19,7 @@
 		<ul class="w-full flex gap-x-10 border-b py-3">
 			{#each links as link (link.id)}
 				<li class="font-main text-main">
-					<a href={link?.url}>{link?.name}</a>
+					<a href={link?.url} on:click={closeMenu}>{link?.name}</a>
 				</li>
 			{/each}
 		</ul>
@@ -44,7 +48,7 @@
 				<ul bind:this={mobileRef} class="w-full flex flex-col gap-y-3 pb-3">
 					{#each links as link (link.id)}
 						<li class="font-main text-main">
-							<a href={link?.url}>{link?.name}</a>
+							<a href={link?.url} on:click={closeMenu}>{link?.name}</a>
 						</li>
 					{/each}
 				</ul>
