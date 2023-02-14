@@ -10,7 +10,7 @@
 	export { className as class };
 
 	export let media: Media;
-
+	export let loading: string;
 	//
 
 	$: ({ type, video, image } = media);
@@ -32,6 +32,6 @@
 	{/if}
 
 	{#if type == 'image' && image}
-		<Image {image} />
+		<Image {image} {loading} />
 	{/if}
 </figure>

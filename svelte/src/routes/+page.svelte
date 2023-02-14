@@ -12,5 +12,5 @@
 		<RichText value={data?.body} />
 	</div>
 
-	<Media media={data?.media} class="col-span-2" />
+	<Media media={data?.media} class="col-span-2" loading="eager" />
 </section>
