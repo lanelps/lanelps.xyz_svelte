@@ -1,5 +1,6 @@
 <script lang="ts">
 	import RichText from '~components/RichText.svelte';
+	import ContactForm from '~components/ContactForm.svelte';
 
 	export let data: ContactPageData;
 </script>
@@ -8,6 +9,8 @@
 	<div class="sticky top-0 h-max flex flex-col gap-y-6">
 		<RichText value={data?.body} />
 	</div>
+
+	<ContactForm class="col-span-2" />
 </section>
 
 <style lang="postcss">
