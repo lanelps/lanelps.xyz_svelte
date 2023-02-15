@@ -12,7 +12,7 @@ const cld = new Cloudinary({
 	}
 });
 
-export const getCloudinaryVideoURL = (publicId: string, options) => {
+export const getCloudinaryVideoURL: GetCloudinaryVideoURL = (publicId, options) => {
 	let myVideo = cld?.video(publicId);
 
 	if (options?.width) {

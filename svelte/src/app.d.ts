@@ -106,4 +106,9 @@ type GetImageDimensions = (
 	image: Image
 ) => { width: number; height: number; aspectRatio: number } | undefined;
 
+type GetCloudinaryVideoURL = (
+	publicId: string,
+	options: { format: string; quality: string; width: number }
+) => string;
+
 // export {};
