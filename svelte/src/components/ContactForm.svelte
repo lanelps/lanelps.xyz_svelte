@@ -58,7 +58,7 @@
 </script>
 
 <form
-	class={`${className} flex flex-col -mt-3 font-main text-main`}
+	class={`${className} relative w-full flex flex-col -mt-3 font-main text-main`}
 	on:submit|preventDefault={handleSubmit}
 	action="/api/send-grid"
 >

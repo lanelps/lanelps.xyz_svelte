@@ -1,12 +1,13 @@
 <script lang="ts">
 	import ProjectItem from '~components/ProjectItem.svelte';
+	import Grid from '~components/Grid.svelte';
 
 	export let data: WorkPageData;
 
 	$: ({ projects } = data);
 </script>
 
-<section class="grid grid-cols-3 gap-x-4">
+<Grid>
 	<ul class="flex flex-col col-span-3 -mt-3">
 		{#each projects as project, projectIndex (project?._id)}
 			<li class="border-b hover:border-blue transition-colors">
@@ -19,4 +20,4 @@
 			</li>
 		{/each}
 	</ul>
-</section>
+</Grid>

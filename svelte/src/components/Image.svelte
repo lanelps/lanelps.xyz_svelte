@@ -7,7 +7,7 @@
 </script>
 
 <img
-	class="w-full h-auto opacity-0 transition-opacity duration-1000"
+	class="relative w-full h-auto opacity-0 transition-opacity duration-1000"
 	class:opacity-100={loaded}
 	{loading}
 	fetchPriority={loading === 'eager' ? 'high' : undefined}

@@ -1,17 +1,18 @@
 <script lang="ts">
 	import RichText from '~components/RichText.svelte';
 	import Media from '~components/Media.svelte';
+	import Grid from '~components/Grid.svelte';
+	import StickyWrapper from '~components/StickyWrapper.svelte';
+
+	//
 
 	export let data: AboutPageData;
 </script>
 
-<section class="grid grid-cols-3 gap-x-4">
-	<div class="sticky top-0 h-max flex flex-col gap-y-6">
+<Grid>
+	<StickyWrapper>
 		<RichText value={data?.body} />
-	</div>
+	</StickyWrapper>
 
-	<Media media={data?.media} class="col-span-2" loading="eager" />
-</section>
-
-<style lang="postcss">
-</style>
+	<Media media={data?.media} class="col-span-full md-t:col-span-2" loading="eager" />
+</Grid>

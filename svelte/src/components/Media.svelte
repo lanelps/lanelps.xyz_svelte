@@ -26,7 +26,7 @@
 	}
 </script>
 
-<figure class={className}>
+<figure class={`${className} relative w-full`}>
 	{#if type == 'video' && video}
 		<Video sources={[{ url: source, type: video?.format }]} />
 	{/if}

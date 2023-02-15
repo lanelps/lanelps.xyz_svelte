@@ -1,17 +1,16 @@
 <script lang="ts">
 	import RichText from '~components/RichText.svelte';
 	import ContactForm from '~components/ContactForm.svelte';
+	import Grid from '~components/Grid.svelte';
+	import StickyWrapper from '~components/StickyWrapper.svelte';
 
 	export let data: ContactPageData;
 </script>
 
-<section class="grid grid-cols-3 gap-x-4">
-	<div class="sticky top-0 h-max flex flex-col gap-y-6">
+<Grid>
+	<StickyWrapper>
 		<RichText value={data?.body} />
-	</div>
+	</StickyWrapper>
 
-	<ContactForm class="col-span-2" />
-</section>
-
-<style lang="postcss">
-</style>
+	<ContactForm class="col-span-full md-t:col-span-2" />
+</Grid>
