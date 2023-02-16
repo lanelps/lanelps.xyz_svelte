@@ -76,6 +76,27 @@ interface Video {
 	public_id: string;
 }
 
+interface SendGridBody {
+	personalizations: {
+		to: {
+			email: string;
+		}[];
+	}[];
+	from: {
+		email: string;
+		name: string;
+	};
+	reply_to: {
+		email: string;
+		name: string;
+	};
+	subject: string;
+	content: {
+		type: string;
+		value: string;
+	}[];
+}
+
 // functions
 type GetImageProps = (args: {
 	/**
