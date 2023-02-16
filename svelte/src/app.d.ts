@@ -129,7 +129,7 @@ type GetImageDimensions = (
 
 type GetCloudinaryVideoURL = (
 	publicId: string,
-	options: { format: string; quality: string; width: number }
+	options: { format?: string; quality?: string; width?: number }
 ) => string;
 
 // export {};

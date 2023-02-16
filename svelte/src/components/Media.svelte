@@ -19,11 +19,13 @@
 
 	$: if (type === `video` && video) {
 		source = getCloudinaryVideoURL(video?.public_id, {
-			format: `auto`,
+			// format: `auto`,
 			quality: `auto:best`,
 			width: 1440
 		});
 	}
+
+	$: console.log(`source`, source);
 </script>
 
 <figure class={`${className} relative w-full`}>
