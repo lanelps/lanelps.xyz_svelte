@@ -6,9 +6,6 @@
 
 	//
 
-	let className = '';
-	export { className as class };
-
 	export let media: Media;
 	export let loading: string;
 	//
@@ -24,11 +21,9 @@
 			width: 1440
 		});
 	}
-
-	$: console.log(`source`, source);
 </script>
 
-<figure class={`${className} relative w-full`}>
+<figure class={`relative w-full ${$$props?.class}`}>
 	{#if type == 'video' && video}
 		<Video sources={[{ url: source, type: video?.format }]} />
 	{/if}

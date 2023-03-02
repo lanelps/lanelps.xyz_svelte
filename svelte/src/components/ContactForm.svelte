@@ -1,9 +1,6 @@
 <script lang="ts">
 	import { parseFormData } from '~utils/helpers';
 
-	let className = '';
-	export { className as class };
-
 	let submitting = false;
 	let submitted = false;
 	let formError = false;
@@ -58,7 +55,7 @@
 </script>
 
 <form
-	class={`${className} relative w-full flex flex-col -mt-3 font-main text-main`}
+	class={`relative w-full flex flex-col -mt-3 font-main text-main ${$$props?.class}`}
 	on:submit|preventDefault={handleSubmit}
 	action="/api/send-grid"
 >
