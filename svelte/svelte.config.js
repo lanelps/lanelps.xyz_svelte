@@ -1,4 +1,4 @@
-import adapterCloudflare from '@sveltejs/adapter-cloudflare';
+import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import path from 'path';
 
@@ -9,7 +9,13 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapterCloudflare(),
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: null,
+			precompress: false,
+			strict: true
+		}),
 		alias: {
 			'~assets': path.resolve('./src/assets'),
 			'~components': path.resolve('./src/components'),

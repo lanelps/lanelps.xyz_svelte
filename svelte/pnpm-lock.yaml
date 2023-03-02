@@ -7,7 +7,7 @@ specifiers:
   '@sanity/client': ^4.0.1
   '@sanity/image-url': ^1.0.2
   '@sendgrid/mail': ^7.7.0
-  '@sveltejs/adapter-cloudflare': ^2.0.2
+  '@sveltejs/adapter-static': ^2.0.1
   '@sveltejs/kit': ^1.5.6
   '@typescript-eslint/eslint-plugin': ^5.51.0
   '@typescript-eslint/parser': ^5.51.0
@@ -34,7 +34,7 @@ dependencies:
 devDependencies:
   '@portabletext/svelte': 2.0.0-0_svelte@3.55.1
   '@portabletext/types': 2.0.2
-  '@sveltejs/adapter-cloudflare': 2.0.2_@sveltejs+kit@1.5.6
+  '@sveltejs/adapter-static': 2.0.1_@sveltejs+kit@1.5.6
   '@sveltejs/kit': 1.5.6_svelte@3.55.1+vite@4.1.1
   '@typescript-eslint/eslint-plugin': 5.51.0_z4swst3wuuqk4hlme4ajzslgh4
   '@typescript-eslint/parser': 5.51.0_7kw3g6rralp5ps6mg3uyzz6azm
@@ -53,10 +53,6 @@ devDependencies:
   vite: 4.1.1
 
 packages:
-
-  /@cloudflare/workers-types/4.20230214.0:
-    resolution: {integrity: sha512-PfpzIKjMA1P0HLtzZVKp/V4/rAiSkgIVwGKbQleTmj7y5O62NbWP9gAxzOeQ4LpUc8UL17KRF2rXTgNKP2HNFw==}
-    dev: true
 
   /@cloudinary/transformation-builder-sdk/1.2.3:
     resolution: {integrity: sha512-JLXdolOJVaX9f9Uz+72LJsX5OWmdi2QKbPSoCTE4+D5GugPWghdYrCDu53SSkbcGWfIohjUNIjS++6eRgYlYPg==}
@@ -423,15 +419,12 @@ packages:
       - debug
     dev: false
 
-  /@sveltejs/adapter-cloudflare/2.0.2_@sveltejs+kit@1.5.6:
-    resolution: {integrity: sha512-uddWczGKT/Tq5D34zu1moXS2kmRk+B8AUAMPkqQJDlKUfU8+lXum2IjGkLu0vuea64u77vobc+y1WTuiFil4PA==}
+  /@sveltejs/adapter-static/2.0.1_@sveltejs+kit@1.5.6:
+    resolution: {integrity: sha512-o5/q3YwD/ErxYCFlK1v3ydvldyNKk1lh3oeyxn4mhz+Pkbx/uuxhzmbOpytTlp5aVqNHDVsb04xadUzOFCDDzw==}
     peerDependencies:
-      '@sveltejs/kit': ^1.0.0
+      '@sveltejs/kit': ^1.5.0
     dependencies:
-      '@cloudflare/workers-types': 4.20230214.0
       '@sveltejs/kit': 1.5.6_svelte@3.55.1+vite@4.1.1
-      esbuild: 0.16.17
-      worktop: 0.8.0-next.14
     dev: true
 
   /@sveltejs/kit/1.5.6_svelte@3.55.1+vite@4.1.1:
@@ -1215,6 +1208,18 @@ packages:
         optional: true
     dev: false
 
+  /follow-redirects/1.15.2_debug@4.3.4:
+    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 4.3.4
+    dev: false
+
   /form-urlencoded/2.0.9:
     resolution: {integrity: sha512-fWUzNiOnYa126vFAT6TFXd1mhJrvD8IqmQ9ilZPjkLYQfaRreBr5fIUoOpPlWtqaAG64nzoE7u5zSetifab9IA==}
     dev: false
@@ -1254,7 +1259,7 @@ packages:
       create-error-class: 3.0.2
       debug: 4.3.4
       decompress-response: 6.0.0
-      follow-redirects: 1.15.2
+      follow-redirects: 1.15.2_debug@4.3.4
       form-urlencoded: 2.0.9
       into-stream: 3.1.0
       is-plain-object: 5.0.0
@@ -1830,11 +1835,6 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /regexparam/2.0.1:
-    resolution: {integrity: sha512-zRgSaYemnNYxUv+/5SeoHI0eJIgTL/A2pUtXUPLHQxUldagouJ9p+K6IbIZ/JiQuCEv2E2B1O11SjVQy3aMCkw==}
-    engines: {node: '>=8'}
-    dev: true
-
   /regexpp/3.2.0:
     resolution: {integrity: sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==}
     engines: {node: '>=8'}
@@ -2312,14 +2312,6 @@ packages:
   /word-wrap/1.2.3:
     resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}
     engines: {node: '>=0.10.0'}
-    dev: true
-
-  /worktop/0.8.0-next.14:
-    resolution: {integrity: sha512-RZgqHu1w/JcUdWOE/BUEAzarrUUHh39eWkLdX8XpA6MfgLJF6X5Vl26CV7/wcm4O/UpZvHMGJUtB9eYTqDjc9g==}
-    engines: {node: '>=12'}
-    dependencies:
-      mrmime: 1.0.1
-      regexparam: 2.0.1
     dev: true
 
   /wrappy/1.0.2:
