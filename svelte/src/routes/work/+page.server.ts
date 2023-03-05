@@ -1,9 +1,9 @@
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 
 import { client } from '~utils/sanity';
 import { image } from '~utils/groq';
 
-export const load: PageLoad = async () => {
+export const load: PageServerLoad = async () => {
 	const projects = await client.fetch(`*[_type == "projects"] | order(projectDate desc) {
 		_id,
 		projectName,

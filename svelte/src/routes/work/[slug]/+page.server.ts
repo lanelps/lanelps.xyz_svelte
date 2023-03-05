@@ -1,9 +1,9 @@
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 
 import { client } from '~utils/sanity';
 import { image } from '~utils/groq';
 
-export const load: PageLoad = async ({ params }) => {
+export const load: PageServerLoad = async ({ params }) => {
 	const data = await client.fetch(
 		`*[_type == "projects" && slug.current == $slug][0] {
             _id,
