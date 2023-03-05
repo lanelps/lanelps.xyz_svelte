@@ -73,11 +73,11 @@ module.exports = {
 				'100%': { opacity: `1` }
 			},
 			'appear-up': {
-				'0%': { opacity: `0`, transform: `translateY(calc(100% + 1rem))` },
+				'0%': { opacity: `0`, transform: `translateY(100%)` },
 				'100%': { opacity: `1`, transform: `translateY(0%)` }
 			},
 			'appear-down': {
-				'0%': { opacity: `0`, transform: `translateY(calc(-100% - 1rem))` },
+				'0%': { opacity: `0`, transform: `translateY(-100%)` },
 				'100%': { opacity: `1`, transform: `translateY(0%)` }
 			}
 		},
