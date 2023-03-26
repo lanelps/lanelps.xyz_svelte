@@ -6,17 +6,22 @@ export default {
     {
       name: `title`,
       title: `Title`,
-      type: `string`
+      type: `string`,
     },
     {
       name: `body`,
       title: `Body`,
-      type: `blockContent`
+      type: `blockContent`,
     },
     {
       name: `media`,
       title: `Media`,
-      type: `media`
-    }
-  ]
-};
+      type: `media`,
+    },
+    {
+      name: `seo`,
+      title: `SEO`,
+      type: `seo`,
+    },
+  ],
+}

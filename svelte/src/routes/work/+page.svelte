@@ -32,6 +32,11 @@
 	// };
 </script>
 
+<svelte:head>
+	<title>{data?.seo?.title} | Lane Wirihana Le Prevost-Smith</title>
+	<meta name="description" content={data?.seo?.description} />
+</svelte:head>
+
 <Grid>
 	<ul class="flex flex-col col-span-3 -mt-3">
 		<!-- <li class="relative w-full flex gap-x-2.5 py-3 font-main text-main border-b z-10">

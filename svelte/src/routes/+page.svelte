@@ -9,6 +9,11 @@
 	export let data: HomePageData;
 </script>
 
+<svelte:head>
+	<title>{data?.seo?.title}</title>
+	<meta name="description" content={data?.seo?.description} />
+</svelte:head>
+
 <Grid>
 	<StickyWrapper>
 		<RichText value={data?.body} />

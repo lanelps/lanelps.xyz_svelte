@@ -10,17 +10,24 @@ declare global {
 	}
 }
 
-// objects
+// page data
+interface SEO {
+	title: string;
+	description: string;
+}
+
 interface HomePageData {
 	title: string;
 	body: PortableTextBlock[];
 	media: Media;
+	seo: SEO;
 }
 
 interface AboutPageData {
 	title: string;
 	body: PortableTextBlock[];
 	media: Media;
+	seo: SEO;
 }
 
 interface WorkPageData {
@@ -40,11 +47,13 @@ interface WorkPageData {
 	tags: {
 		name: string;
 	}[];
+	seo: SEO;
 }
 
 interface ContactPageData {
 	title: string;
 	body: PortableTextBlock[];
+	seo: SEO;
 }
 
 interface Project {
@@ -60,8 +69,10 @@ interface Project {
 	};
 	team: string[];
 	website: string;
+	seo: SEO;
 }
 
+// objects
 interface Media {
 	type: string;
 	image?: Image;

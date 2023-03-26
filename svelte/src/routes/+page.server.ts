@@ -1,6 +1,7 @@
 import type { PageServerLoad } from './$types';
 
 import { client } from '~utils/sanity';
+import { seo } from '~utils/groq';
 
 export const load: PageServerLoad = async () => {
 	const data = await client.fetch(`*[_type == "homePage"][0] {
@@ -18,6 +19,7 @@ export const load: PageServerLoad = async () => {
 				}
 			}
 		},
+		${seo}
 	}`);
 
 	if (data) {

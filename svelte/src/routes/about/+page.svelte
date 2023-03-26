@@ -9,6 +9,11 @@
 	export let data: AboutPageData;
 </script>
 
+<svelte:head>
+	<title>{data?.seo?.title} | Lane Wirihana Le Prevost-Smith</title>
+	<meta name="description" content={data?.seo?.description} />
+</svelte:head>
+
 <Grid>
 	<StickyWrapper>
 		<RichText value={data?.body} />

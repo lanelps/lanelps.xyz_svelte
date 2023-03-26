@@ -7,6 +7,11 @@
 	export let data: Project;
 </script>
 
+<svelte:head>
+	<title>{data?.seo?.title} | Lane Wirihana Le Prevost-Smith</title>
+	<meta name="description" content={data?.seo?.description} />
+</svelte:head>
+
 <Grid>
 	<StickyWrapper>
 		<div class="flex flex-col gap gap-y-3">

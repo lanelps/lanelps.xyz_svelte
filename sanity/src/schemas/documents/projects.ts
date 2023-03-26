@@ -74,6 +74,11 @@ export default {
       type: `array`,
       of: [{type: `altImage`}],
     },
+    {
+      name: `seo`,
+      title: `SEO`,
+      type: `seo`,
+    },
   ],
   preview: {
     select: {

@@ -1,7 +1,7 @@
 import type { PageServerLoad } from './$types';
 
 import { client } from '~utils/sanity';
-import { image } from '~utils/groq';
+import { image, seo } from '~utils/groq';
 
 export const load: PageServerLoad = async ({ params }) => {
 	const data = await client.fetch(
@@ -21,7 +21,8 @@ export const load: PageServerLoad = async ({ params }) => {
             },
             images[] {
                 ${image}
-            }
+            },
+            ${seo}
 	    }`,
 		{ slug: params?.slug }
 	);

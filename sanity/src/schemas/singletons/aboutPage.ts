@@ -18,5 +18,10 @@ export default {
       title: `Media`,
       type: `media`,
     },
+    {
+      name: `seo`,
+      title: `SEO`,
+      type: `seo`,
+    },
   ],
 }

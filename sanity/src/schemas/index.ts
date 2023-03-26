@@ -11,6 +11,7 @@ import homePage from './singletons/homePage'
 import blockContent from './objects/blockContent'
 import altImage from './objects/altImage'
 import media from './objects/media'
+import seo from './objects/seo'
 
 export const schemaTypes = [
   projects,
@@ -23,4 +24,5 @@ export const schemaTypes = [
   blockContent,
   altImage,
   media,
+  seo,
 ]

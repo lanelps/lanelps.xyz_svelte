@@ -29,7 +29,14 @@ export const load: PageServerLoad = async () => {
 	`);
 
 	if (data) {
-		return data;
+		return {
+			...data,
+			seo: {
+				title: 'Work',
+				description:
+					'From portfolio websites to interactive web apps. I specialize in creating bespoke and unique frontend designs and user interactions for the web, using popular JavaScript frameworks and libraries like SvelteKit, Gatsby, and React.js. See for yourself.'
+			}
+		};
 	}
 
 	return {
