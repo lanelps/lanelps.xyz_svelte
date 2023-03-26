@@ -24,7 +24,10 @@
 	}
 </script>
 
-<figure class={`relative w-full ${$$props?.class}`} in:fly={{ y: -400, duration: 600 }}>
+<figure
+	class={`relative w-full rounded-lg overflow-hidden ${$$props?.class}`}
+	in:fly={{ y: -400, duration: 600 }}
+>
 	{#if type == 'video' && video}
 		<Video sources={[{ url: source, type: video?.format }]} />
 	{/if}

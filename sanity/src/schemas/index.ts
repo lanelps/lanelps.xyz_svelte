@@ -1,18 +1,20 @@
 // documents
-import projects from './documents/projects.js'
+import projects from './documents/projects'
+import tags from './documents/tags'
 
 // singletons
-import aboutPage from './singletons/aboutPage.js'
-import contactPage from './singletons/contactPage.js'
-import homePage from './singletons/homePage.js'
+import aboutPage from './singletons/aboutPage'
+import contactPage from './singletons/contactPage'
+import homePage from './singletons/homePage'
 
 // objects
-import blockContent from './objects/blockContent.js'
-import altImage from './objects/altImage.js'
-import media from './objects/media.js'
+import blockContent from './objects/blockContent'
+import altImage from './objects/altImage'
+import media from './objects/media'
 
 export const schemaTypes = [
   projects,
+  tags,
   //
   aboutPage,
   contactPage,

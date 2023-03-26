@@ -37,6 +37,15 @@ export default {
       type: `url`,
     },
     {
+      name: `tags`,
+      title: `Tags`,
+      type: `array`,
+      of: [{type: `reference`, to: [{type: `tags`}]}],
+      options: {
+        layout: `tags`,
+      },
+    },
+    {
       name: `role`,
       title: `Role`,
       type: `array`,

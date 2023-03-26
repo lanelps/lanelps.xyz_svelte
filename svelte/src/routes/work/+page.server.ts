@@ -4,20 +4,32 @@ import { client } from '~utils/sanity';
 import { image } from '~utils/groq';
 
 export const load: PageServerLoad = async () => {
-	const projects = await client.fetch(`*[_type == "projects"] | order(projectDate desc) {
-		_id,
-		projectName,
-        slug {
-            current
-        },
-        projectDate,
-        cover {
-            ${image}
-        },
-	}`);
+	const data = await client.fetch(`{
+		'projects': *[_type == "projects"] | order(projectDate desc) {
+			_id,
+			projectName,
+			slug {
+				current
+			},
+			projectDate,
+			cover {
+				${image}
+			},
+			tags[]->{
+				_id,
+				name
+			}
+		},
+	
+		'tags': *[_type == "tags"] {
+			_id,
+			name
+		},
+	}
+	`);
 
-	if (projects.length > 0) {
-		return { projects };
+	if (data) {
+		return data;
 	}
 
 	return {

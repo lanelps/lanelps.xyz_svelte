@@ -32,6 +32,13 @@ interface WorkPageData {
 			current: string;
 		};
 		cover: Image;
+		tags: {
+			_id: string;
+			name: string;
+		}[];
+	}[];
+	tags: {
+		name: string;
 	}[];
 }
 

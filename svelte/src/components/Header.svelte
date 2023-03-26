@@ -16,7 +16,7 @@
 
 <header class="absolute top-0 w-full px-3 bg-white md-t:bg-transparent z-50">
 	<nav class="hidden md-t:block">
-		<ul class="w-full flex gap-x-10 border-b py-3">
+		<ul class="w-full flex gap-x-10 border-b py-3 backdrop-blur">
 			{#each links as link (link.id)}
 				<li class="font-main text-main">
 					<a href={link?.url} on:click={closeMenu}>{link?.name}</a>

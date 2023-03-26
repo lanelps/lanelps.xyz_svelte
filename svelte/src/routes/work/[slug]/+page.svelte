@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Image from '~components/Image.svelte';
+	import Media from '~components/Media.svelte';
 	import RichText from '~components/RichText.svelte';
 	import Grid from '~components/Grid.svelte';
 	import StickyWrapper from '~components/StickyWrapper.svelte';
@@ -35,7 +35,7 @@
 	<ul class="relative w-full col-span-full md-t:col-span-2 flex flex-col gap-y-3">
 		{#each data.images as image (image._key)}
 			<li class="w-full">
-				<Image {image} />
+				<Media media={{ type: 'image', image }} loading="lazy" />
 			</li>
 		{/each}
 	</ul>
