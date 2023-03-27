@@ -58,6 +58,7 @@
 	class={`relative w-full flex flex-col -mt-3 font-main text-main ${$$props?.class}`}
 	on:submit|preventDefault={handleSubmit}
 	action="/api/send-grid"
+	method="POST"
 >
 	<input
 		type="text"
