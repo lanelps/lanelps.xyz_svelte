@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { getImageProps } from '~utils/sanity';
-
 	export let image: Image;
 	export let loading: string = 'lazy';
 	let loaded: boolean = false;
@@ -12,9 +10,6 @@
 	{loading}
 	fetchPriority={loading === 'eager' ? 'high' : undefined}
 	alt={image?.altText || ''}
-	{...getImageProps({
-		image,
-		maxWidth: 1200
-	})}
+	{...image?.url}
 	on:load={() => (loaded = true)}
 />

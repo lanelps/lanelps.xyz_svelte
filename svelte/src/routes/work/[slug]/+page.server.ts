@@ -1,6 +1,7 @@
 import type { PageServerLoad } from './$types';
 
 import { client } from '~utils/sanity';
+import { getMedia } from '~utils/helpers';
 import { image, seo } from '~utils/groq';
 
 export const load: PageServerLoad = async ({ params }) => {
@@ -16,9 +17,6 @@ export const load: PageServerLoad = async ({ params }) => {
             website,
             role,
             team,
-            cover {
-                ${image}
-            },
             images[] {
                 ${image}
             },
@@ -28,7 +26,13 @@ export const load: PageServerLoad = async ({ params }) => {
 	);
 
 	if (data) {
-		return data;
+		return {
+			...data,
+			images: data.images.map((image: Image) => ({
+				_key: image?._key,
+				...getMedia({ type: 'image', image })
+			}))
+		};
 	}
 
 	return {

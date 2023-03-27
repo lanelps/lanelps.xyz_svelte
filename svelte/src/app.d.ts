@@ -81,17 +81,26 @@ interface Media {
 
 interface Image {
 	_key?: string;
-	_type?: string;
 	asset: {
 		_ref: string;
 		_type?: string;
 	};
 	altText: string;
+	url: ImageProps;
+}
+
+interface ImageProps {
+	src: string;
+	srcset: string;
+	sizes: string;
+	width: number;
+	height: number;
 }
 
 interface Video {
 	format: string;
 	public_id: string;
+	url: string;
 }
 
 interface SendGridBody {
@@ -139,7 +148,7 @@ type GetImageProps = (args: {
 
 	// Custom <img> element's `sizes` attribute
 	sizes?: string;
-}) => { src: string; srcset: string; sizes: string; width: number; height: number };
+}) => ImageProps;
 
 type GetImageDimensions = (
 	image: Image
@@ -150,4 +159,5 @@ type GetCloudinaryVideoURL = (
 	options: { format?: string; quality?: string; width?: number }
 ) => string;
 
+type GetMedia = (media: Media) => Media;
 // export {};

@@ -1,6 +1,7 @@
 import type { PageServerLoad } from './$types';
 
 import { client } from '~utils/sanity';
+import { getMedia } from '~utils/helpers';
 import { seo } from '~utils/groq';
 
 export const load: PageServerLoad = async () => {
@@ -23,7 +24,10 @@ export const load: PageServerLoad = async () => {
 	}`);
 
 	if (data) {
-		return data;
+		return {
+			...data,
+			media: getMedia(data.media)
+		};
 	}
 
 	return {
