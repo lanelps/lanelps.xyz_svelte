@@ -16,7 +16,9 @@
 
 	a:hover,
 	a:active,
+	a.active,
 	button:hover,
+	button:active,
 	button.active {
 		color: theme('colors.blue');
 		transform: skew(-20deg, 0);

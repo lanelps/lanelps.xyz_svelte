@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+
 	const links = [
 		{ id: 1, url: `/`, name: `Home` },
 		{ id: 2, url: `/about`, name: `About` },
@@ -19,7 +21,9 @@
 		<ul class="w-full flex gap-x-10 border-b py-3 backdrop-blur">
 			{#each links as link (link.id)}
 				<li class="font-main text-main">
-					<a href={link?.url} on:click={closeMenu}>{link?.name}</a>
+					<a href={link?.url} class:active={$page.url.pathname === link?.url} on:click={closeMenu}
+						>{link?.name}</a
+					>
 				</li>
 			{/each}
 		</ul>
