@@ -1,35 +1,38 @@
 <script lang="ts">
-	import { fly, slide, fade } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
 
 	import ProjectItem from '~components/ProjectItem.svelte';
 	import Grid from '~components/Grid.svelte';
+	import { opacity } from '@cloudinary/url-gen/actions/adjust';
 
 	export let data: WorkPageData;
 
-	// let tags = data.tags.map((tag) => tag.name).sort();
+	let tags = data.tags.map((tag) => tag.name).sort();
 
 	let activeFilter = ``;
 
-	$: filteredProjects = data.projects.filter((project) => {
-		if (!activeFilter) return project;
+	$: filteredProjects = data.projects.map((project) => {
+		const filteredProject = { ...project, active: false };
 
-		return project.tags.map((t) => t.name).includes(activeFilter);
+		if (!activeFilter) {
+			filteredProject.active = true;
+			return filteredProject;
+		}
+
+		if (project.tags.map((t) => t.name).includes(activeFilter)) {
+			filteredProject.active = true;
+		}
+
+		return filteredProject;
 	});
 
-	// const setFilter = (name: string) => {
-	// 	if (activeFilter === name) {
-	// 		return (activeFilter = ``);
-	// 	}
+	const setFilter = (name: string) => {
+		if (activeFilter === name) {
+			return (activeFilter = ``);
+		}
 
-	// 	activeFilter = name;
-	// };
-
-	// const hide = (node, { duration, delay }: { duration: number; delay?: number }) => {
-	// 	return {
-	// 		duration: !delay ? duration : duration + delay,
-	// 		css: () => `opacity: 0`
-	// 	};
-	// };
+		activeFilter = name;
+	};
 </script>
 
 <svelte:head>
@@ -39,7 +42,7 @@
 
 <Grid>
 	<ul class="flex flex-col col-span-3 -mt-3">
-		<!-- <li class="relative w-full flex gap-x-2.5 py-3 font-main text-main border-b z-10">
+		<li class="relative w-full flex gap-x-2.5 py-3 font-main text-main border-b z-10">
 			{#each tags as tag}
 				<button
 					class="px-2.5 py-1 border rounded-full hover:skew-x-0"
@@ -47,14 +50,15 @@
 					on:click={() => setFilter(tag)}>{tag}</button
 				>
 			{/each}
-		</li> -->
+		</li>
 
 		<div class="realtive w-full flex flex-col">
 			{#each filteredProjects as project, projectIndex (project?._id)}
 				<li
-					class="border-b hover:border-blue"
+					class="border-b hover:border-blue transition-opacity duration-300"
+					class:opacity-30={!project?.active}
+					class:pointer-events-none={!project?.active}
 					in:slide={{ duration: 300, delay: 300 + 25 * projectIndex }}
-					out:slide={{ duration: 300, delay: 300 }}
 				>
 					<div>
 						<ProjectItem
