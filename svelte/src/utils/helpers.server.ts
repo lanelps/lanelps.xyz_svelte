@@ -1,5 +1,5 @@
-import { getCloudinaryVideoURL } from '~utils/cloudinary';
-import { getImageProps } from '~utils/sanity';
+import { getCloudinaryVideoURL } from '~utils/cloudinary.server';
+import { getImageProps } from '~utils/sanity.server';
 
 export const getMedia: GetMedia = (media) => {
 	return {

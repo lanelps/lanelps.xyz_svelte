@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types';
 
-import { client } from '~utils/sanity';
+import { client } from '~utils/sanity.server';
 import { image } from '~utils/groq';
 
 export const load: PageServerLoad = async () => {

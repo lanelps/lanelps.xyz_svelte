@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types';
 
-import { client } from '~utils/sanity';
+import { client } from '~utils/sanity.server';
 import { getMedia } from '~utils/helpers.server';
 import { media, seo } from '~utils/groq';
 
