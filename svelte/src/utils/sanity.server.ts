@@ -10,10 +10,7 @@ export const client = sanityClient({
 	useCdn: false
 });
 
-const imageBuilder = imageUrlBuilder({
-	projectId: PUBLIC_SANITY_PROJECT_ID,
-	dataset: PUBLIC_SANITY_DATASET
-});
+const imageBuilder = imageUrlBuilder(client);
 
 export const getImageDimensions: GetImageDimensions = (image) => {
 	if (!image?.asset?._ref) {
