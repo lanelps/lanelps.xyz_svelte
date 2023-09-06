@@ -24,13 +24,19 @@
 			<div class="flex">
 				<h3><b>Role:</b></h3>
 				&nbsp;
-				<p>{data?.role}</p>
+				<p>{data?.role?.join(', ')}</p>
 			</div>
 
 			<div class="flex">
 				<h3><b>Team:</b></h3>
 				&nbsp;
-				<p>{data?.team}</p>
+				<p>{data?.team?.join(', ')}</p>
+			</div>
+
+			<div class="flex">
+				<h3><b>Tech-stack:</b></h3>
+				&nbsp;
+				<p>{data?.techStack?.join(', ')}</p>
 			</div>
 
 			<RichText value={data?.projectDescription} />

@@ -17,6 +17,7 @@ export const load: PageServerLoad = async ({ params }) => {
             website,
             role,
             team,
+			techStack,
             images[] {
                 ${image}
             },

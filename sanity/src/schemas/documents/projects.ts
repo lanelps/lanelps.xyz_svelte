@@ -64,6 +64,15 @@ export default {
       },
     },
     {
+      name: `techStack`,
+      title: `Tech Stack`,
+      type: `array`,
+      of: [{type: `string`}],
+      options: {
+        layout: `tags`,
+      },
+    },
+    {
       name: `cover`,
       title: `Cover Image`,
       type: `altImage`,
